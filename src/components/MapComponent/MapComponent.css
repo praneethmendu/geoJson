@@ -1,0 +1,13 @@
+.instructions {
+  position: absolute;
+  z-index: 999;
+  padding: 0.5%;
+  width: max-content;
+  margin: 1%;
+  left: 0;
+  bottom: 0;
+  background: white;
+  color: black;
+  border-radius: 0.2em;
+  box-shadow: 2px 2px 3px #555555;
+}
