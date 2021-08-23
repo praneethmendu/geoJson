@@ -4,7 +4,7 @@ const latitude = yup
   .number()
   .min(-90, "provide a value between -90 and +90")
   .max(90, "provide a value between -90 and +90")
-  .required("this cannot be empty");
+  .required();
 const longitude = yup
   .number()
   .min(-180, "provide a value between -180 and +180")

@@ -31,7 +31,7 @@ const MapComponent = (props: Props) => {
         top: templat[1],
       });
     }
-  }, [secondVertex]);
+  }, [secondVertex, firstVertex, setBound]);
 
   useMapEvents({
     click(clickEvent: LeafletMouseEvent) {
