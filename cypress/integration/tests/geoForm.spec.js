@@ -28,10 +28,10 @@ describe('geoJson - form', () => {
     cy.on('window:alert', stub)
 
     cy.visit('http://localhost:3000')
-    cy.get('#left').clear().type('0')
-    cy.get('#right').clear().type('1')
-    cy.get('#top').clear().type('0.26')
-    cy.get('#bottom').clear().type('0')
+    cy.get('input[name=left]').click().clear().type('0')
+    cy.get('input[name=right]').clear().type('1')
+    cy.get('input[name=top]').clear().type('0.26')
+    cy.get('input[name=bottom]').clear().type('0')
     cy.get('.MuiButtonBase-root').click()
 
     cy.on('window:alert', (text) => {

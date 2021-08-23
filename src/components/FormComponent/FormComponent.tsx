@@ -38,11 +38,8 @@ function FormComponent(props: Props): JSX.Element {
     },
   });
 
-  const keyMaker = (): string =>
-    `${bound.left}|${bound.right}|${bound.top}|${bound.bottom}`;
-
   return (
-    <div key={keyMaker()}>
+    <div>
       <form onSubmit={formik.handleSubmit}>
         <TextField
           fullWidth
