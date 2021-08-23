@@ -11,7 +11,7 @@ interface Props {
   bound: Bound;
 }
 
-function FormComponent(props: Props): React.ReactNode | any {
+function FormComponent(props: Props): JSX.Element {
   const { bound } = props;
   const [currentGeoJson, setCurrentGeoJson] = useState({});
   const [loading, setLoading] = useState(false);

@@ -21,7 +21,7 @@ function App() {
       <div className="map-container">
         <MapContainer
           center={[52.533247, 13.425464]}
-          zoom={13}
+          zoom={15}
           className="full-size">
           <MapComponent setBound={setBound} />
         </MapContainer>

@@ -11,7 +11,7 @@ interface Props {
   setGeoJson: React.Dispatch<React.SetStateAction<object>>;
 }
 
-function JsonDilogComponent(props: Props): React.ReactNode | any {
+function JsonDilogComponent(props: Props): JSX.Element {
   const { geoJson, setGeoJson } = props;
 
   const getHref = URL.createObjectURL(

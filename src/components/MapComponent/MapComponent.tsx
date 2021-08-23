@@ -2,18 +2,18 @@ import "./MapComponent.css";
 import { useState, useEffect } from "react";
 import { Marker, Rectangle, useMapEvents, TileLayer } from "react-leaflet";
 import { Bound } from "../../model/bound";
-
+import { LatLngTuple, LeafletMouseEvent } from "leaflet";
 interface Props {
   setBound: (bound: Bound) => void;
 }
 
 const MapComponent = (props: Props) => {
   const { setBound } = props;
-  const [firstVertex, setFirstVertex] = useState<number[] | null>([
-    52.54, 13.4,
+  const [firstVertex, setFirstVertex] = useState<LatLngTuple | null>([
+    52.531, 13.441,
   ]);
-  const [secondVertex, setSecondVertex] = useState<number[] | null>([
-    52.52, 13.44,
+  const [secondVertex, setSecondVertex] = useState<LatLngTuple | null>([
+    52.53, 13.44,
   ]);
   const [instructions, setInstructions] = useState<string>(
     "click anywhere to start over"
@@ -23,17 +23,17 @@ const MapComponent = (props: Props) => {
   useEffect(
     () =>
       setBound({
-        left: 13.4,
-        right: 13.44,
-        bottom: 52.52,
-        top: 52.54,
+        left: 13.44,
+        right: 13.441,
+        bottom: 52.53,
+        top: 52.531,
       }),
-    []
+    [setBound]
   );
 
   useMapEvents({
     click(clickEvent: LeafletMouseEvent) {
-      let latLng = [clickEvent.latlng.lat, clickEvent.latlng.lng];
+      let latLng: LatLngTuple = [clickEvent.latlng.lat, clickEvent.latlng.lng];
       if (!firstVertex) {
         setFirstVertex(latLng);
         setInstructions("now pick the opposite vertex");
